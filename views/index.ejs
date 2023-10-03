@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DASHBOARD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8; 
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0056b3; 
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #0056b3; 
+            cursor: pointer;
+            margin: 0 10px;
+            border-radius: 5px; 
+            transition: background-color 0.3s ease, border-color 0.3s ease; 
+        }
+
+        .button:hover {
+            background-color: #0056b3; 
+            border-color: #004399; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <center>
+            <img class="main-image" src="/images/demo.jpeg" >
+        </center>
+        <h1>DASHBOARD</h1>
+    </header>
+    <nav>
+        <a href="/search">Search</a>
+        <a href="/register">Register</a>
+        <a href="/TX_report">TX Report</a>
+        <a href="/CA_report">CA Report</a>
+        <a href="/NamLePage">NamLePage</a>
+
+    </nav>
+
+    <script>
+        function redirectToSearch() {
+            window.location.href = "/search";
+        }
+        function redirectToRegister(){
+            window.location.href = "/register";
+        }
+        function redirectToTXreport(){
+            window.location.href = "/TX_report";
+        }
+        function redirectToCAreport(){
+            window.location.href = "/CA_report";
+        }
+        function redirectToNamLePage(){
+            window.location.href = "/NamLePage";
+        }
+    </script>
+    <center>
+        <br>
+        <div>
+            <iframe title="report" width="900" height="700" src="https://app.powerbi.com/view?r=eyJrIjoiNDRlYWUzNGUtZDRjMi00ZmY4LTlmMDktYThjMjk0OWJjNGUwIiwidCI6IjJlMzlhNDM0LWE2YmMtNGJhNC1iZGY1LTQ2YmUyOWMyYTYwMCIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+    </center>
+</body>
+</html>

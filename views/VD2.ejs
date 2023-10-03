@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DASHBOARD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            color: #000; /* Change text color to black */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #0056b3;
+            cursor: pointer;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            border-color: #004399;
+        }
+
+        #subtitle-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #subtitle {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/images/demo.jpeg" alt="Sample Image" width="200">
+    </header>
+	<br>
+	<br>
+	
+    <!-- Embed a YouTube video -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/bZQun8Y4L2A?si=P9tDBPoU0netj_No" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <div id="subtitle-container">
+        <p id="subtitle"></p>
+    </div>
+
+    <script>
+        // Declare variables
+        const subtitleDiv = document.getElementById('subtitle');
+
+        // Function to load and display the content of an SRT file
+        function loadSRTFile(file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    // Display the SRT content within the 'subtitle' element
+                    subtitleDiv.innerHTML = data.replace(/\n/g, '<br>');
+                })
+                .catch(error => {
+                    console.error('Error loading subtitle:', error);
+                });
+        }
+
+        // Load the SRT file and display its content from a relative path
+        loadSRTFile('subtitleVD2.srt'); // Make sure the SRT file is in the same directory as this HTML file.
+    </script>
+</body>
+</html>
+
